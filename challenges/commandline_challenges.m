@@ -6,7 +6,38 @@
 
 
 %% Challenge 2
-% CHALLENGE TWO
+% create a square matrix in your workspace that is filled with random
+% numbers
+
+% HINT: randi([a b],Nrows,Ncols), creates a random matrix filled 
+% with numbers between a and b, and of the size specified by Nrows x Ncols
+% randi([-10 10],2,3) is a matrix with 2 rows, and 3 columns,
+% containing numbers between -10 and 10
+
+% try it out! (highlight the following line and press F9)
+random_matrix = randi([-10 10],2,3)
+
+% __________ PART ONE ___________
+
+% Now can you use indexing to:
+
+% Select the number in the top left corner
+
+% Select the number in the bottom right corner
+
+% Select the entire top row
+
+% Select the entire middle column
+
+% __________ PART TWO ___________
+
+% Create a second matrix the same size as your first one
+
+
+% Create a third larger matrix by concatenating your first two matrices
+% together on top of one another
+
+% What about concatenating them side by side?
 
 
 %% Challenge 2 - Extension
