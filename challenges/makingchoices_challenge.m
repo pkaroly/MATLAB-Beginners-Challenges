@@ -11,36 +11,20 @@ num2 = 25;
 
 %% Challenge 1 - Extension
 
-% Write code to decide whether two numbers 
-% are within 10% of each other
+% Write code to decide whether a number is at least 10% higher than
+% a threshold value
 
 % We've started the code for you to make it easier ->
 
-num1 = 37;
-num2 = 40;
+threshold = 37;
+number = 40;
  
-% Fill in a value for percent_diff (calculate the
-% difference between num1 and num2, then express the difference
-% as a percentage of one of the numbers (you can use either number, 
-% or for an extra challenge - choose the largest number!)
+% Work out what 10 percent of the threshold is
 
-% HINT: the command abs(n) returns the absolute value of n
 
- percent_diff = 0; % ??
+% Check if number is bigger than ( threshold + 10% of threshold ) 
 
-% Now using your value of percent_diff to complete the following 
-% if statement by deciding what the threshold should be
 
-threshold = 0; % ??
- 
-if (percent_diff > threshold)
-    disp('number 2 is within 10% of number 1');
-else
-    disp('number 2 is not within 10% of number 1');
-end
-
-% Check your code with some different values of number 1 
-% and number 2 – does it still work? (try negative numbers too)
 
 %% Extension - exploring logic
 
@@ -114,8 +98,9 @@ disp(['sum of positive values: ', num2str(total)])
 % loads in some patient data and select one patient vector 
 % (choose any patient you like HINT: remember how to slice a single vector 
 % out of a data matrix?). 
+
 % Loop through this patient vector and add up the number of days the patient’s 
-% inflammation was within 10% of the maximum value for that patient
+% inflammation was at least 10% higher than the mean value for that patient
 
 % HINTS
 % First clear the workspace
@@ -128,23 +113,19 @@ clc;
 % select the first patient to analyse
 
 
-% find the maximum value
- 
+% find the mean value
 
-% initialize the sum of days where the inflammation was within 10% of the
-% max
+% find the mean + 10% of the mean
+
+% initialize the sum of days where the inflammation greater than
+% your threshold value
 
  
 % loop through each inflammation value,
-% if it is within 10% of the max
-% add one to the total sum ...
+% if it is bigger than mean + (10% of mean)
+% add one to your total sum ...
 
 
-% fill in your final answer
-my_answer = 0; % ??
-% Then display the answer
-disp(['The total number of days with high inflammation (10% of max) is: ' ... , 
-num2str(my_answer)]);
 
 %% Challenge 3
 
@@ -158,9 +139,12 @@ num2str(my_answer)]);
 % high inflammation days for one patient so that it 
 % does not require a loop to do so. 
 
-% HINT: one way to do this is to set an upper and lower boundary 
-% condition that represent ±10% of the maximum inflammation. 
-% Then test when the patient vector is between these two boundary 
-% conditions using a command like this:
+% HINT: one way to do this is to set a boundary 
+% condition equal to (mean + 10% of mean) inflammation. 
+% Then test when the patient vector is above the boundary 
+% condition using a command like this:
 
-% my_patient >= lower_bound) & (my_patient <= upper_bound);
+% my_patient_vector >= threshold
+
+% You can even test two conditions at once:
+% (my_patient_vector >= lower_threshold) & (my_patient_vector <= upper_threshold)
