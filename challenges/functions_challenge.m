@@ -2,10 +2,6 @@
 % This file has the challenges for the functions lesson.
 
 %% Challenge #1
-% Make a concept map of a function that calculates the maximum of two
-% different numbers
-
-%% Challenge #2
 % Turn this code into a function that takes in1 and in2 as inputs 
 % and outputs out 1 and out2
 % You should also give your function a name that helps people work out what
@@ -17,11 +13,11 @@ in2 = 4;
 out1 = in1 - in2;
 out2 = in1 + in2;
 
-%% Extension
+%% Challenge 1 - Extension
 % Inputs can be anything (numbers, vectors, strings)
 % Try your function from above with vectors? matrices?
 
-%% Extension
+%% Challenge 1 - Extension
 % Turn the following code into a function that has two inputs -  hungry and bored
 % and one output
 
@@ -37,10 +33,9 @@ else
 end
 
 % does this function really need an output?
-% what happens if you right a function with no outputs?
+% what happens if you write a function with no outputs?
 
-
-%% Challenge #3
+%% Challenge #2
 % Write a function that takes two numbers and returns the sum of the numbers 
 % and the product of the numbers (two inputs and two outputs).
 % Include in the function an “if statement” that tests whether the sum or 
@@ -48,40 +43,62 @@ end
 % whether the sum or product is bigger (ie. ‘sum is bigger’ or ‘product is
 % bigger’).
 
-%% Extension
-% Take the code you wrote to test whether two numbers are within 10% 
-% and turn it into a function. Your function should take in two numbers as inputs, 
-% and output 1 if the numbers are within 10% and 0 if they are not.
+%% Challenge 2 - Extension
+% functions without inputs and outputs - what the?!
+% try and copy and paste this function into a new window
+% see if you can work out what it does
 
-% HINT your syntax should look something like this
-% out = function_name(num1,num2)
+% ______________UNKNOWN FUNCTION ______________
+
+% function coin
 % 
-% inside the function, create a variable called out, which equal
-% either 1 or 0.
-% (don't forget to write you will need to write your function in a new m-file & save it)
+% out = rand;
+% 
+% if out >= 0.5
+%     out = 1;
+% else
+%     out = 0;
+% end
+% 
+% if out == 1
+%     display('Heads')
+% else
+%     display('Tails')
+% end
+% 
+% end
 
-%% Challenge #4
-% Make a function called “centre_shift” that will shift your data to a 
-% desired mean, and use it in the analyse_data.m script.
-% Add documentation to your function so that if you type “help centre_shift”
-% in the command line, useful information about how to use the function will 
-% show up.
+% __________________________________________________
 
-%% Extension
-% Add code to your centre_shift function that generates a subplot of the
-% unshifted & shifted data with plot titles 'inflammation' and 'shifted
-% inflammation'
-% Save the figure
-% Also save a copy of the shifted data (as a .mat file) with a new name (so
-% it doesn't overwrite your original data)
+% Edit the function called coin so that it has an input, P
+% Let P bet the probability of rolling heads (so for a fair coin, P = 0.5)
 
-%% Challenge #5
-% Look up a function on file exchange and see if you can work out how to
-% use them
-% If you don't know what to look up here are some ideas:
-% - tightfig
-% - shadedErrorBar
-% - export_fig
 
-%% Extension
-% try and use one of the functions you looked up on the data
+%% Challenge #3
+% Make a function called “centre_shift” that will shift your data to a desired mean, 
+% and use it in your analyse_data.m script
+% Add documentation to your function so that if you type 
+% “help centre_shift” in the command line, useful information about 
+% how to use the function will show up
+
+
+%% Challenge 3 - Extension
+
+% At one time or another, we all had to memorize boring times tables.
+% 5 times 5 is 25. 5 times 6 is 30. 12 times 12 is way more than you think.
+% 
+% With MATLAB, times tables should be easy! 
+%Write a function that outputs times tables up to the size requested.
+% 
+% Example:
+% 
+%  Input n = 5
+%  Output m is [ 1     2     3     4     5
+%                2     4     6     8    10
+%                3     6     9    12    15
+%                4     8    12    16    20
+%                5    10    15    20    25 ]
+
+%% More practice
+% Go to this website and try out some of the function challenges
+% http://au.mathworks.com/matlabcentral/cody/?sort=&term=group%3A%22Cody+Challenge%22
