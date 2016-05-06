@@ -9,6 +9,14 @@
 num1 = 40;
 num2 = 25;
 
+if num1 > num2
+    display('number 1 is bigger than number 2')
+elseif num1 < num2
+    display('number 1 is less than number 2');
+else
+    display('the numbers are equal')
+end
+
 %% Challenge 1 - Extension
 
 % Write code to decide whether a number is at least 10% higher than
@@ -20,9 +28,15 @@ threshold = 37;
 number = 40;
  
 % Work out what 10 percent of the threshold is
+tenP = abs(0.1 * threshold);
 
 
 % Check if number is bigger than ( threshold + 10% of threshold ) 
+if number > (threshold + tenP)
+    display('the number is above the threshold')
+else
+    display('the number is below the thershold')
+end
 
 
 
@@ -74,7 +88,8 @@ end
 numbers = [-5, 3, 2, -1, 9, 6];
 
 % initialise value to zero
-total = 0;     
+total_pos = 0;  
+total_neg = 0;
 
 % loop through each element in "numbers" vector
 for n = numbers 
@@ -82,15 +97,18 @@ for n = numbers
     % checks if the number is positive
     if n >= 0
         % add it to the total of positive numbers
-        total = total + n;        
+        total_pos = total_pos + n;        
     % closes the "if" statement
+    else
+        total_neg = total_neg + n;
     end
     
 % closes the "for" loop    
 end
 
 % display the sum
-disp(['sum of positive values: ', num2str(total)])
+disp(['sum of positive values: ', num2str(total_pos)])
+disp(['sum of negative values: ', num2str(total_neg)])
 
 %% Challenge 2 - Extension
 
@@ -108,30 +126,42 @@ clear;
 clc;
 
 % load patient data
+patient_data = csvread('inflammation-01.csv');
 
 
 % select the first patient to analyse
+patient_one = patient_data(1,:);
 
 
 % find the mean value
-
+p1_mean = mean(patient_one);
 % find the mean + 10% of the mean
+threshold = p1_mean + abs(0.1*p1_mean);
 
 % initialize the sum of days where the inflammation greater than
 % your threshold value
-
+sumdays = 0;
  
 % loop through each inflammation value,
 % if it is bigger than mean + (10% of mean)
 % add one to your total sum ...
+for n = patient_one
+   if n > threshold
+      sumdays = sumdays + 1; 
+   end
+end
 
-
-
+display(['There were ' num2str(sumdays) ' days with higher than average inflammation']);
 %% Challenge 3
 
 % How would you display the total number of negative and positive
 % numbers (without using a loop)
+
+ numbers = [-5, 3, 2, -1, 9, 6];
  
+ % using logical indexing
+ sum_neg = sum(numbers(numbers < 0))
+ sum_pos = sum(numbers(numbers > 0))
 
 %% Challenge 3 - Extension
 
@@ -145,6 +175,8 @@ clc;
 % condition using a command like this:
 
 % my_patient_vector >= threshold
+
+sumdays = sum(patient_one > threshold)
 
 % You can even test two conditions at once:
 % (my_patient_vector >= lower_threshold) & (my_patient_vector <= upper_threshold)
