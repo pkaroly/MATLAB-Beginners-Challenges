@@ -10,8 +10,9 @@
 in1 = 5;
 in2 = 4;
 
-out1 = in1 - in2;
-out2 = in1 + in2;
+out1 = in1 + in2;
+out2 = in1 - in2;
+
 
 %% Challenge 1 - Extension
 % Inputs can be anything (numbers, vectors, strings)
@@ -42,6 +43,7 @@ end
 % product is bigger, and returns a third output that is a string stating 
 % whether the sum or product is bigger (ie. ‘sum is bigger’ or ‘product is
 % bigger’).
+
 
 %% Challenge 2 - Extension
 % functions without inputs and outputs - what the?!
